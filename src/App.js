@@ -15,7 +15,7 @@ function App() {
       console.log(data.body);
       console.log(data.body["m2m:cin"]);
     });
-  });
+  },[socket]);
   return (
     <div>
       <h1>ThingPlugSubscription Test</h1>
