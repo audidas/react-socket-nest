@@ -29,6 +29,7 @@ function App() {
 
       request.onreadystatechange = function () {
         if (this.readyState === 4) {
+          console.log(this.response)
           setLastData(JSON.parse(this.response));
         }
       };
@@ -57,9 +58,9 @@ function App() {
         </div>
       ) : lastData ? (
         <div>
-          <div>데이터 : {lastData["cin"].con}(하중 값이 들어갈 예정입니다)</div>
-          <div>변환횟수 : {lastData["cin"].st} </div>
-          <div>생성날짜 : {lastData["cin"].ct}</div>
+          <div>데이터 : {lastData["cin"]?.con}(하중 값이 들어갈 예정입니다)</div>
+          <div>변환횟수 : {lastData["cin"]?.st} </div>
+          <div>생성날짜 : {lastData["cin"]?.ct}</div>
         </div>
       ) : null}
     </div>
